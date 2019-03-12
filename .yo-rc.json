@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.agilea.solutions"
+    },
+    "jhipsterVersion": "5.5.0",
+    "applicationType": "monolith",
+    "baseName": "taskApplication",
+    "packageName": "com.agilea.solutions",
+    "packageFolder": "com/agilea/solutions",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZTI2ODc5ZmM3YzQ4NDAzMjM3N2IxYmQ4MzZkMzQwZGY3MjljY2I2Nzg5ZTQ4MDgxZDY4OWQwMjAyNTg4OTUxMTZhZDMxMDg5MzJhMGRlMjliMDU1MjAwYzcxNThiNDQxYjJjYWEwMzk1YjA4YTAwZWQzMTQ3MDcwMWFjMzY2ZGM=",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": false
+  }
+}
