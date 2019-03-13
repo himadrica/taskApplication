@@ -1,9 +1,17 @@
 language: java
 sudo: true
 jdk: oraclejdk8
-
+services:
+  - docker
+  
 before_install:
   - chmod +x mvnw
   
 script:
 - ./mvnw clean test -B
+
+after_success:
+  - ./mvnw package -Pprod verify jib:dockerBuild
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push himadrica/taskapplication
