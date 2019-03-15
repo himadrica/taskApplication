@@ -1,0 +1,18 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "taskapplication",
+      "image": "himadrica/taskapplication",
+      "hostname": "taskapplication",
+      "essential": true,
+      "memory": 256,
+	  "portMappings": [
+			{
+			  "hostPort": 80,
+			  "containerPort": 8080
+			}
+		]
+    }
+  ]
+}

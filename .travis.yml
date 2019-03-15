@@ -15,3 +15,16 @@ after_success:
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push himadrica/taskapplication
+  
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: jhipster-taskApplication
+  env: JhipsterTaskapplication-env
+  bucket_name: "elasticbeanstalk-us-east-2-411339812211"
+  bucket_path: task-application
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
