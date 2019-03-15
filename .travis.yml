@@ -23,6 +23,7 @@ deploy:
   env: JhipsterTaskapplication-env
   bucket_name: "elasticbeanstalk-us-east-2-411339812211"
   bucket_path: task-application
+  local_dir: "target"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
