@@ -14,9 +14,6 @@ script:
 
 after_success:
  - ./mvnw package -Pdev verify jib:dockerBuild
- # Log in to the docker CLI
- - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
- - docker push himadrica/taskapplication
   
 deploy:
  provider: heroku
