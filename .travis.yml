@@ -27,13 +27,17 @@ before_install:
   - npm install -g npm
   - node -v
   - npm -v
+  - chmod +x mvnw
 install:
   - npm install
 script:
-  - chmod +x mvnw
   - ./mvnw clean test
-  - npm test -- -u
   - ./mvnw verify -Pprod -DskipTests
+after_success:
+  - ./mvnw package -Pprod verify jib:dockerBuild
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push himadrica/taskapplication
 notifications:
   webhooks:
     on_success: change  # options: [always|never|change] default: always
@@ -41,6 +45,6 @@ notifications:
     on_start: false     # default: false
 deploy:
   provider: heroku
-  api_key: adcea529-9014-49a2-918b-480c2abf58dd
+  api_key: $HEROKU_API_KEY
   app: abhik-task-app	
 	
